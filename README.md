@@ -29,7 +29,6 @@ Filebeat watches the. files or locations specified and collects logs for forward
 Metricbeat records and monitors metrics from the system and services running on the server.
 
 The configuration details of each machine may be found below.
-# _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name       | Function | Ip Address | Operating System |
 |------------|----------|------------|------------------|
@@ -89,6 +88,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
+- ssh -i .ssh/id_rsa azureuser@104.42.21.23
+- sudo docker container start clever_napier
+- sudo docker container attach clever_napier
 - Copy the filebeat-config.yml file to /etc/files/filebeat-config.yml.
 - Update the filebeat-playbook.yml file to include which machines to install on.
 - Run the playbook, and navigate to http://20.112.110.224:5601/app/kibana to check that the installation worked as expected.
